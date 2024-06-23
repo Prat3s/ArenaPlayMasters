@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Arena Playmaster's </title>
+    <link rel="stylesheet" type="text/css" href="styles/agenda_style.css">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="images/index/Logo_1.png" alt="logo" class="logo_img">
+        </a>
+        <ul class="nav">
+            <li class="header-container">
+                <div class="header-content">
+                    <a href="index.html" class="hover-header">Inicio</a>
+                    <img src="images/index/Pacman.gif" alt="pacman" class="header-hover-image">
+                </div>
+            </li>
+
+            <li class="header-container">
+                <div class="header-content">
+                    <a href="cardapio.html" class="hover-header">Cardapio</a>
+                    <img src="images/index/Pacman.gif" alt="pacman" class="header-hover-image">
+                </div>
+            </li> 
+
+            <li class="header-container">
+                <div class="header-content">
+                    <a href="placar_de_lideres.html" class="hover-header">PlacarㅤdeㅤLideres</a>
+                    <img src="images/index/Pacman.gif" alt="pacman" class="header-hover-image">
+                </div>
+            </li> 
+
+            <li class="header-container">
+                <div class="header-content">
+                    <a href="agenda.html" class="hover-header  active">Agenda</a>
+                    <img src="images/index/Pacman.gif" alt="pacman" class="header-hover-image">
+                </div>
+            </li> 
+
+        </ul>
+
+    </header>
+    
+    <img src="images/agenda/Placa.png" alt="placa" class="placa">
+
+  
+
+    <div class="btn-container">
+        <div class="btn-wrapper">
+            <a href="#h1" class="btn1">31/05 e 01/06</a>
+            <span class="btn-description1">Game Night</span>
+        </div>
+        <div class="btn-wrapper">
+            <a href="#h2" class="btn2">07/06 e 08/06</a>
+            <span class="btn-description2">Animerp</span>
+        </div>
+        <div class="btn-wrapper">
+            <a href="#h3" class="btn3">14/06 e 15/06</a>
+            <span class="btn-description3">Torneio Just Dance</span>
+        </div>
+        <div class="btn-wrapper">
+            <a href="#h4" class="btn4">21/06 e 22/06</a>
+            <span class="btn-description4">Festa Junina</span>
+        </div>
+        <div class="btn-wrapper">
+            <a href="#h5" class="btn5">28/06 e 29/06</a>
+            <span class="btn-description5">Campeonato Just Dance</span>
+        </div>
+    </div>
+
+    <section class="texto"> 
+        <h1 id="h1">Game Night</h1>
+        <p class="p1">Essa é a noite de Jogos do Arena, um final de semana padrão onde você pode aproveitar dos diversos jogos que possuimos.</p>
+
+        <h2 id="h2">Animerp</h2>
+        <p class="p2">O arena será movido para o SescRP onde iremos levar todas nossas atrações e oferecelas gratuitamente para vocês.</p>
+
+        <h3 id="h3">Torneio Just Dance</h3>
+        <p class="p3">Esse é o torneio escolhido do mês, onde os melhores jogadores irão acumular pontos para participar do Campeonato.</p>
+
+        <h4 id="h4">Festa Junina</h4>
+        <p class="p4">Nesse final de semana teremos atrações especiais de Festa Junina para vocês.</p>
+
+        <h5 id="h5">Campeonato Just Dance</h5>
+        <p class="p5">Esse é o campeonato escolhido do mês, onde os melhores jogadores do torneio irão competir por um premio em dinheiro e um trofeu especial.</p>
+    </section>
+
+    <div class="space"></div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="column">
+                <h3>Endereço</h3>
+                <p>Rua Doutor Coutinho Cavalcante, 2036 Junto a Loja da Blackborbo - Jardim Alto Alegre, São José do Rio Preto - SP, 15054-300</p>
+            </div>
+            <div class="column">
+                <h3>Contatos</h3>
+                <p>Telefone: (17)4002-8922</p>
+                <p>Email: caffexp@gmail.com</p>
+            </div>
+            <div class="column">
+                <h3>Redes Sociais</h3>
+                <a href="https://www.facebook.com/arenaplaymasters" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/arenaplaymasters" target="_blank">Instagram</a>
+                <a href="https://twitter.com/arenaplaymasters" target="_blank">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let fundo = document.getElementById('fundo');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            fundo.style.marginTop = value * 0.75 + 'px';
+            })
+    </script>
+    
+    
+
+</body>
+
+</html>

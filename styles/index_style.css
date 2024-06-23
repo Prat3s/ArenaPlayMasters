@@ -1,0 +1,1221 @@
+  @import url('https://fonts.cdnfonts.com/css/arcade-classic');
+
+  @font-face {
+    font-family: 'SpaceInvaders';
+    src: url('../fonts/invaders.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zelda';
+    src: url('../fonts/the-legend-of-zelda-nes.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+                
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+
+body
+{
+    min-height: 100vh;
+    background: #000000;
+    
+}
+
+
+
+.box
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.box .group
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.iconContainer
+{
+    display: flex;
+    gap: 0.5em;
+    font-size: 2em;
+    font-family: 'SpaceInvaders';
+    width: 200vw;
+    animation: animate 80s linear infinite;
+    z-index: 1;
+}
+@keyframes animate
+{
+    0%,100%
+    {
+        transform: translateX(-100vw);
+    }
+    50%
+    {
+        transform: translateX(0vw);
+    }
+}
+
+.iconContainer:nth-child(even)
+{
+    animation: animate2 80s linear infinite;
+}
+@keyframes animate2
+{
+    0%,100%
+    {
+        transform: translateX(0vw);
+    }
+    50%
+    {
+        transform: translateX(-100vw);
+    }
+}
+
+.iconContainer i 
+{
+    cursor: default;
+    user-select: none;
+    transition: 2s;
+    color: transparent;
+    opacity: 0.15;
+    -webkit-text-stroke: 1px #0f0;
+
+}
+
+
+
+.iconContainer i:hover
+{
+    color: #0f0;
+    transition: 0s;
+    text-shadow: 0 0 120px #0f0;
+    opacity: 1;
+    -webkit-text-stroke: 1px transparent;
+
+}
+
+
+
+/* Começo Cabeçalho */
+
+
+body::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to bottom, #000000, #000000, transparent );
+    pointer-events: none;
+    z-index: 2;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    font-family: 'ArcadeClassic', sans-serif;
+}
+
+header .logo_img
+{
+    padding: 30px ;
+    width: 300px; 
+    height: auto; 
+}
+
+header ul
+{
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 20px;
+}
+
+
+
+header ul li:nth-child(1) a:hover,
+header ul li a.active
+
+
+{
+    background: #ff0000;
+    color: #fff;
+}
+
+header ul li:nth-child(2) a:hover
+{
+    background: #fd7b01;
+    color: #fff;
+}
+
+header ul li:nth-child(3) a:hover
+{
+    background: #4ba9e9;
+    color: #fff;
+}
+
+header ul li:nth-child(4) a:hover
+{
+    background: #db78df;
+    color: #fff;
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center; 
+    position: relative; 
+}
+
+
+.header-hover-image {
+    pointer-events:none;
+    position: absolute;
+    width: 8vw;
+    max-width: 40px;
+    height: auto;
+    display: none;
+    z-index: 5;
+}
+
+.header-content:hover .header-hover-image {
+    display: flex;
+}
+
+
+/* Fim Cabeçalho */
+
+
+
+section.mainContainer
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.mainContainer img#fliperamas
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#btn
+{
+    font-family: 'ArcadeClassic', sans-serif;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 20px;
+    font-size: 2em;
+    z-index: 100;
+    animation: changeColor 1s infinite;
+
+}
+
+@keyframes changeColor {
+    0%, 100% {
+        color: white; 
+    }
+    50% {
+        color: transparent;
+    }
+}
+
+
+
+section.mainContainer::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #000000, #000000, transparent );
+    z-index: 999;
+}
+
+.sec::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #000000, transparent );
+    z-index: 999;
+}
+
+
+.sec
+{
+    position: relative;
+    width: 100%;
+    height: 200vw;
+    background-image: url("../images/index/fundo.png");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    z-index: 6;
+}
+
+.sec h2
+{
+    padding: 50px;
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+    text-align: center;
+}
+
+.sec p
+{
+    padding: 50px;
+    margin-left: 10px;
+    font-size: 1.5em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+.gameboy {
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: auto;
+}
+
+
+.textbox-left h2
+{
+    padding: 50px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+    text-align: left;
+}
+
+.textbox-right h2
+{
+    padding: 50px;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+    text-align: right;
+}
+
+.textbox-right p
+{
+    padding: 50px;
+    font-size: 1.5em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+    text-align: right;
+}
+
+.just-dance
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.just-dance p
+{
+    padding: 50px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+
+.just-dance-img {
+    padding: 50px;
+    display: block;
+    margin: right;
+    width: 30%;
+    height: auto;
+}
+
+.arcade-zone
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arcade-zone p
+{
+    padding: 50px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+
+.arcade-zone-img {
+    padding: 50px;
+    display: block;
+    margin: right;
+    width: 30%;
+    height: auto;
+}
+
+
+.karaoke
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.karaoke p
+{
+    padding: 50px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+
+.karaoke-img {
+    padding: 50px;
+    display: block;
+    margin: right;
+    width: 30%;
+    height: auto;
+}
+
+.rpg
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rpg p
+{
+    padding: 50px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+
+.rpg-img {
+    padding: 50px;
+    display: block;
+    margin: right;
+    width: 30%;
+    height: auto;
+}
+
+.retro-zone
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.retro-zone p
+{
+    padding: 50px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Zelda', sans-serif;
+}
+
+.retro-img {
+    padding: 50px;
+    display: block;
+    margin: right;
+    width: 30%;
+    height: auto;
+}
+
+
+
+
+/*INICIO DO RODAPE*/
+
+.space{
+    position: relative;
+    height: 1px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.space::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #000000, transparent );
+    z-index: 999;
+    pointer-events: none;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    background-color: rgba(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 0 20px;
+  }
+  
+  .column h3 {
+    color: #fd7b01;
+    margin-bottom: 10px;
+  }
+  
+  .column p {
+    margin: 5px 0;
+  }
+  
+  .column a {
+    display:inline;
+    color: #fff;
+    text-decoration: none;
+    
+    margin: 5px 10px;
+  }
+  
+  .column a:hover {
+    color: #fd7b01;
+  }
+  
+   
+  
+    /*FINAL DO RODAPE*/
+
+
+    /*INICIO MEDIA QUERIES (RESPONSIVIDADE)*/
+
+    @media (max-width:319px){
+
+        header ul {
+            margin: auto;
+            padding: 40px 0px;
+            display: block;
+        }
+        header ul li{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        header ul li a {
+            width: 100%;
+            
+        }
+
+        header .logo_img {
+            padding: 10px;
+        }
+        header{
+            text-align: center;
+            font-size: 1em;
+            display: block;
+        }
+        body::before{
+        height: 675px;
+        }
+
+        #btn{
+            position: absolute;
+        }
+
+        .sec{
+            height: 430vw;
+            
+        }
+
+        .sec::before{
+            height: 40px;
+        }
+
+        section.mainContainer{
+            height: 300vw;
+        }
+
+        .gameboy {
+        width: 100%;
+        padding: 20px;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 40%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 0px;
+        }
+        .sec p {
+            padding: 0px;
+            font-size: 0.4em;
+        }
+
+        .sec h2{
+            
+            font-size: 0.8em;
+            padding: 12px;
+            
+        }
+
+        .space{
+            height: 5px;
+        }
+    }
+
+
+    @media (min-width:320px) and (max-width: 480px){
+
+        header ul {
+            margin: auto;
+            padding: 40px 0px;
+            display: block;
+        }
+        header ul li{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        header ul li a {
+            width: 100%;
+            
+        }
+
+        header .logo_img {
+            padding: 10px;
+        }
+        header{
+            text-align: center;
+            font-size: 1em;
+            display: block;
+        }
+        body::before{
+        height: 675px;
+        }
+
+        #btn{
+            position: absolute;
+        }
+
+        .sec{
+            height: 430vw;
+            
+        }
+
+        .sec::before{
+            height: 40px;
+        }
+
+        section.mainContainer{
+            height: 300vw;
+        }
+
+        .gameboy {
+        width: 100%;
+        padding: 20px;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 40%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 0px;
+        }
+        .sec p {
+            padding: 0px;
+            font-size: 0.4em;
+        }
+
+        .sec h2{
+            
+            font-size: 0.8em;
+            padding: 12px;
+            
+        }
+
+        .space{
+            height: 5px;
+        }
+    }
+
+    
+
+    @media (min-width:481px) and (max-width: 768px){
+
+        header ul {
+            margin: auto;
+            padding: 40px 0px;
+            display: block;
+        }
+        header ul li{
+            margin-left: 0;
+            margin-top: 10px;
+        }
+
+        header ul li a {
+            width: 100%;
+        }
+
+        header{
+            text-align: center;
+            font-size: 1.15em;
+        }
+
+        .sec{
+            height: 460vw;
+            
+        }
+        .gameboy {
+        width: 100%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 40%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 0px;
+        }
+        .sec p {
+            padding: 0px;
+            font-size: 0.5em;
+        }
+
+        .sec h2{
+            font-size: 2em;
+            padding-bottom: 0px;
+        }
+
+        .space{
+            height: 5px;
+        }
+    }
+
+
+
+
+
+    @media (min-width:769px) and (max-width: 1024px)
+    {
+
+        header ul {
+            padding: 30px 0px;
+        }
+
+        
+
+        .sec{
+            height: 460vw;
+        }
+        .gameboy {
+        width: 100%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 40%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 40%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+        }
+    }
+
+    @media (min-width:1025px) and (max-width:1280px){
+
+        header ul li a{
+            padding: 6px 22px;
+        }
+
+        .sec{
+            height: 370vw;
+        }
+        .gameboy {
+        width: 80%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 35%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+        }
+
+    }
+
+    @media (min-width:1281px) and (max-width:1440px){
+
+
+        .sec{
+            height: 350vw;
+        }
+        .gameboy {
+        width: 80%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 35%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+        }
+
+    }
+
+    @media (min-width:1441px) and (max-width:1680px){
+
+
+        .sec{
+            height: 320vw;
+        }
+        .gameboy {
+        width: 80%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 30%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 30%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 30%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+        }
+
+    }
+
+    @media (min-width:1681px) and (max-width:1920px){
+
+
+        .sec{
+            height: 330vw;
+        }
+        .gameboy {
+        width: 70%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 35%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+        }
+
+    }
+
+    @media (min-width:1921px) and (max-width:2560px){
+
+
+        header{
+            font-size: 2em;
+        }
+
+
+        .sec{
+            
+           height: 350vw;
+        }
+        .gameboy {
+        width: 70%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 35%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        .sec h2{
+            font-size: 5.5em;
+        }
+
+        footer{
+            font-size: 2em;
+        }
+    }
+
+    @media (min-width:2561px){
+
+
+        header{
+            font-size: 2em;
+        }
+
+
+        .sec{
+           height: 280vw;
+        }
+        .gameboy {
+        width: 70%;
+        }
+
+        .just-dance-img{
+
+            padding: 0px;
+            width: 35%;
+        }
+
+        .arcade-zone-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .karaoke-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .rpg-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .retro-img{
+            padding: 0px;
+            width: 35%;
+        }
+
+        .textbox-right h2{
+            padding: 10px;
+        }
+        .textbox-left h2{
+            padding: 20px;
+        }
+        .sec p {
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        .sec h2{
+            font-size: 5.5em;
+        }
+
+        footer{
+            font-size: 2em;
+        }
+    }
+
+    /*FIM MEDIA QUERIES (RESPONSIVIDADE)*/
